@@ -36,7 +36,7 @@ while TwinsHealth > 1:
     command = input("What is your move?")
     if command == "Attack":
         if Start == "E":
-            Attack = 60
+            Attack = 55
             if Random_number1 == random.randint(1,3):
                 Attack = Attack + random.randint(10,30)
                 TwinsHealth = TwinsHealth - Attack
@@ -47,7 +47,7 @@ while TwinsHealth > 1:
                 TwinsHealth = TwinsHealth - Attack
                 print("You attacked! Dealt" ,Attack, "damage!")
         elif Start == "N":
-            Attack = 50
+            Attack = 45
             if Random_number1 == random.randint(1,4):
                 Attack = Attack + random.randint(5,20)
                 TwinsHealth = TwinsHealth - Attack
@@ -88,7 +88,12 @@ while TwinsHealth > 1:
         if Random_number2 == random.randint(1,5):
             print("You dodged the Twins' attack!")
         else:
-            TwinsDamage = random.randint(20, 50)
+            if Start == "E":
+                TwinsDamage = random.randint(15, 35)
+            elif Start == "N":
+                TwinsDamage = random.randint(20, 50)
+            elif Start == "H":    
+                TwinsDamage = random.randint(30, 55)
             print ("Twins attacked! Lost" ,TwinsDamage, "health!")
             PlayerHealth = PlayerHealth - TwinsDamage
             print("You have" ,PlayerHealth, "health!")
