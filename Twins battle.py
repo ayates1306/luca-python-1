@@ -1,5 +1,5 @@
 import random
-print("-------------------------TWINS BATTLE SIMULATOR!!!!!-------------------------")
+print("----------------------TWINS BATTLE SIMULATOR!!!!!v.B1.2.1----------------------")
 print("")
 print("Instructions:")
 print("Your options are 'Attack' or 'Heal'. Type these in respectively to make your    move.")
@@ -12,33 +12,33 @@ while Start not in Difficulty:
     Start = input()
 if Start == "E":
     TwinsHealth = 450
-    MaxP_Health = 400
-    PlayerHealth = 400
-    HealingPotions = 7
-    Random_number1 = 6
-    Random_number2 = 3
+    MaxP_Health = 300
+    PlayerHealth = 300
+    HealingPotions = 5
+    Random_number1 = 3
+    Random_number2 = 6
 elif Start == "N":
     TwinsHealth = 500
     MaxP_Health = 300
     PlayerHealth = 300
     HealingPotions = 5
-    Random_number1 = 5
-    Random_number2 = 4
-elif Start == "H":
-    TwinsHealth = 600
-    MaxP_Health = 250
-    PlayerHealth = 250
-    HealingPotions = 3
     Random_number1 = 4
     Random_number2 = 5
+elif Start == "H":
+    TwinsHealth = 500
+    MaxP_Health = 250
+    PlayerHealth = 250
+    HealingPotions = 4
+    Random_number1 = 5
+    Random_number2 = 4
 print ("The Twins have awoken!")
 while TwinsHealth > 1:
     command = input("What is your move?")
     if command == "Attack":
         if Start == "E":
-            Attack = 55
+            Attack = 50
             if Random_number1 == random.randint(1,3):
-                Attack = Attack + random.randint(10,30)
+                Attack = Attack + random.randint(10,20)
                 TwinsHealth = TwinsHealth - Attack
                 print("You attacked! Critical hit! Dealt" ,Attack, "damage!")
             elif (Random_number2 == random.randint(1,6)):
@@ -89,9 +89,9 @@ while TwinsHealth > 1:
             print("You dodged the Twins' attack!")
         else:
             if Start == "E":
-                TwinsDamage = random.randint(15, 35)
+                TwinsDamage = random.randint(25, 45)
             elif Start == "N":
-                TwinsDamage = random.randint(20, 50)
+                TwinsDamage = random.randint(25, 50)
             elif Start == "H":    
                 TwinsDamage = random.randint(30, 55)
             print ("Twins attacked! Lost" ,TwinsDamage, "health!")
